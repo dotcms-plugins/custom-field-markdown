@@ -1,0 +1,53 @@
+<iframe
+    id="reactAppIframe${field.velocityVarName}"
+    style="border:1px solid silver"
+    min-height="500px"
+    max-height="1500px"
+    width="100%"
+>
+</iframe>
+
+<script>
+    const fieldVar="${field.velocityVarName}"
+    const hiddenField = document.getElementById(fieldVar);
+    const hiddenFieldValue = hiddenField.value;
+    const iframe = document.getElementById("reactAppIframe" + fieldVar);
+    
+    //const hostname = location.hostname + (location.port==443 || location.port==80) ? "" : ":" + location.port ;
+
+    // Set data to the iframe to be loaded in the React App
+    iframe.dataset.value = hiddenFieldValue;
+    iframe.dataset.fieldVar = fieldVar;
+    iframe.src = '/application/custom-field-markdown/index.html';
+
+    function resizeIframe${field.velocityVarName}() {
+        let realHeight = iframe.contentWindow.document.body.scrollHeight;
+        realHeight = realHeight < 500 ? 500 : (realHeight > 1500) ? 1500 : realHeight;
+        iframe.height = realHeight+ "px";
+    }
+
+    const endTrim = ((str) => {
+        let i = str.length - 1
+        while(str[i] === ' ' || str[i]==='\n' || str[i]==='\\') {
+            str = str.slice(0,i--)
+        }
+        return str
+    })
+
+    iframe.onload = () => {
+        iframe.contentWindow.document.addEventListener("custom-field-" + fieldVar,
+            (event) => {
+                console.debug("customEventRecieving",event)
+                // Prevent default and stop propagation to avoid conflict issues
+                event.preventDefault();
+                event.stopPropagation();
+                
+                // Updates value of hidden field related to the custom field
+                hiddenField.value = endTrim(event.detail);
+                resizeIframe${field.velocityVarName}();
+
+            });
+            resizeIframe${field.velocityVarName}();
+    };
+
+</script>
