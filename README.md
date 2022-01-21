@@ -1,6 +1,8 @@
 # Markdown Custom Field for dotCMS
 
-This provides a react based dotCMS custom field that leverages the excellent Rich Markdown Editor found here: https://github.com/outline/rich-markdown-editor.  you can get started using it by just uploading 
+This provides a react based dotCMS custom field that leverages the excellent Rich Markdown Editor found here: https://github.com/outline/rich-markdown-editor and the example React Custom Field here: https://github.com/dotcms-plugins/custom-field-react. 
+
+You can get started using it by just uploading 
 
 ![Screen Shot 2022-01-21 at 3 44 17 PM](https://user-images.githubusercontent.com/934364/150597681-3fc3a0f4-504c-44c4-8c67-240945058806.png)
 
