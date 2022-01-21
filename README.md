@@ -1,21 +1,29 @@
 # Markdown Custom Field for dotCMS
 
-This provides a react based dotCMS custom field that leverages the excellent Rich Markdown Editor found here: https://github.com/outline/rich-markdown-editor
-
-## Steps:
-
-1. Clone and build the this repo
-2. Upload the resulting `./custom-field-markdown` folder into dotCMS as `/application/custom-field-markdown`.
-3. Create the `Custom Field`
-4. Create a content based on the new `Custom Field`
+This provides a react based dotCMS custom field that leverages the excellent Rich Markdown Editor found here: https://github.com/outline/rich-markdown-editor.  you can get started using it by just uploading 
 
 
-### 1. Clone and build the [ReactJS app](https://reactjs.org/)
+
+
+
+## Steps to Build:
+
+1. Clone this repo
+2. Customize and Build (Optional)
+3. Upload the resulting `./custom-field-markdown` folder into dotCMS as `/application/custom-field-markdown`.
+4. Create the `Custom Field`
+5. Create a content based on the new `Custom Field`
+
+
+### 1. Clone this repo
 
 - A) In your terminal git clone the dotCMS Custom Field - React Markdown Editor App:
 ```
 git clone https://github.com/dotcms-plugins/custom-field-markdown.git;
 ```
+
+### 2. Customize and Build (Optional)
+You can skip this step if you just want to run the pre-packaged plugin.
 
 - B) Install dependencies
 ```
@@ -29,8 +37,8 @@ cd custom-field-markdown;
 ```
 This builds the application to a new folder named `custom-field-markdown`
 
-### 2. Upload the build folder (`custom-field-markdown`) into dotCMS
-- upload new `custom-field-markdown` folder into your DotCMS server, to path: 
+### 2. Upload the folder (`custom-field-markdown`) into dotCMS
+- upload new `custom-field-markdown` folder into your dotCMS server, to path: 
 ```/application/custom-field-markdown```
 
 ### 3. Create the Custom Field
