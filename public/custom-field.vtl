@@ -11,12 +11,18 @@
     const fieldVar="${field.velocityVarName}"
     const hiddenField = document.getElementById(fieldVar);
     const hiddenFieldValue = hiddenField.value;
+
+    const backupField=document.getElementById("documentation");
+    const backupFieldValue=backupField !=null ? backupField.value : "";
+
+    const finalValue = hiddenFieldValue || backupFieldValue;
+
     const iframe = document.getElementById("reactAppIframe" + fieldVar);
     
     //const hostname = location.hostname + (location.port==443 || location.port==80) ? "" : ":" + location.port ;
 
     // Set data to the iframe to be loaded in the React App
-    iframe.dataset.value = hiddenFieldValue;
+    iframe.dataset.value = finalValue;
     iframe.dataset.fieldVar = fieldVar;
     iframe.src = '/application/custom-field-markdown/index.html';
 
